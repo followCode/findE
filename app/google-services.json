@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "402553408574",
+    "firebase_url": "https://finde-7fcb3.firebaseio.com",
+    "project_id": "finde-7fcb3",
+    "storage_bucket": "finde-7fcb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402553408574:android:acdade057d9de399d5956f",
+        "android_client_info": {
+          "package_name": "com.example.finde"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402553408574-8qhvc668p9s4hbaq6shk9l1elbi4bqam.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.finde",
+            "certificate_hash": "7c51db378a1adc835d6ec84d115a21a294875a94"
+          }
+        },
+        {
+          "client_id": "402553408574-66cni5nrk90q249hb7ulekvkuf7sm7fj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhP9V9tOihyb0rvsz3o6yA1i62re80Z60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402553408574-66cni5nrk90q249hb7ulekvkuf7sm7fj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
