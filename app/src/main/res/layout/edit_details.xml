@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/editDetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".EditDetailsActivity">
+
+    <ImageView
+        android:id="@+id/editDetailsPhoto"
+        android:layout_width="148dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="116dp"
+        android:background="@drawable/img"
+        android:contentDescription="ProfilePhoto"
+        android:src="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="336dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+
+            <EditText
+                android:id="@+id/editDetailsName"
+                android:layout_width="276dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangular_edittext"
+                android:inputType="textPersonName"
+                android:hint="Username"
+                android:paddingLeft="8dp"/>
+        </TableRow>
+        <TableRow android:layout_marginTop="15dp">
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:text="Email"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+
+            <EditText
+                android:id="@+id/editDetailsEmail"
+                android:layout_width="276dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangular_edittext"
+                android:inputType="textPersonName"
+                android:hint="Email"
+                android:paddingLeft="8dp"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/UpdateDetails"
+        android:layout_width="356dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="532dp"
+        android:text="Update Details"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
