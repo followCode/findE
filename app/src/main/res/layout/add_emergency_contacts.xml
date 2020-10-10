@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/enterOldPassword"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".AddEmergencyContactsActivity">
+
+    <TextView
+        android:id="@+id/emergencyContactText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="168dp"
+        android:text="Emergency Contacts"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addEmergencyContact1"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="300dp"
+        android:padding="10dp"
+        android:text="Add Contact 1"
+        android:background="@drawable/light_rounded_button"
+        android:drawableStart="@drawable/ic_baseline_person_add_24"
+        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addEmergencyContact2"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="360dp"
+        android:padding="10dp"
+        android:text="Add Contact 2"
+        android:background="@drawable/light_rounded_button"
+        android:drawableStart="@drawable/ic_baseline_person_add_24"
+        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/addEmergencyNextButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="552dp"
+        android:background="@drawable/rounded_button"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

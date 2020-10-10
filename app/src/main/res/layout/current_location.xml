@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/enterOldPassword"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".CurrentLocationActivity">
+
+
+    <TextView
+        android:id="@+id/CurrentLocationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:text="Your Current Location"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapCurrentView"
+        android:layout_width="358dp"
+        android:layout_height="199dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="216dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/findNearbyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="440dp"
+        android:text="Find Nearby :"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/CurrentLocation"
+        android:layout_width="355dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="135dp"
+        android:text="Your Cuurent Location here!"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonService1"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="490dp"
+        android:text="Service 1"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:background="@color/pinkBrown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonService2"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="203dp"
+        android:layout_marginTop="490dp"
+        android:text="Service 2"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:background="@color/pinkBrown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonService3"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="546dp"
+        android:text="Service 3"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:background="@color/pinkBrown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
