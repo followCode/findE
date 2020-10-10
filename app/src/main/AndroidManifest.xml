@@ -29,11 +29,11 @@
         <activity android:name=".GetStartedActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity android:name=".ViewEmergencyContacts" />
         <activity android:name=".MainActivity">
@@ -43,7 +43,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
         </activity>
+        <activity android:name=".AddEmergencyContactsActivity">
 
+        </activity>
+        <activity android:name=".CurrentLocationActivity">
+
+        </activity>
+        <activity android:name=".EnterNewPasswordActivity">
+
+        </activity>
+        <activity android:name=".ViewService1Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ViewService2Activity"></activity>
+        <activity android:name=".ViewService3Activity"></activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

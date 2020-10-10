@@ -143,6 +143,7 @@ public class SignUpActivity extends Activity {
 
                     // TODO: Implement Firebase account creation
 
+
                     Toast.makeText(SignUpActivity.this, "Matching Passwords!!", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(SignUpActivity.this, DashboardActivity.class);
                     startActivity(i);

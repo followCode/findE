@@ -22,6 +22,7 @@ public class SignInActivity extends Activity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent i = new Intent(SignInActivity.this, DashboardActivity.class);
                 startActivity(i);
                 finish();
