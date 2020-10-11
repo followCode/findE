@@ -8,4 +8,65 @@
     android:padding="16dp"
     tools:context=".ViewEmergencyContacts">
 
+    <Button
+        android:id="@+id/emergencyContactDetail2"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/light_rounded_button"
+        android:drawableStart="@drawable/ic_baseline_person_add_24"
+        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+        android:padding="10dp"
+        android:text="Contact Name 2"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/emergencyContactViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="108dp"
+        android:text="Emergency Contacts"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/emergencyContactDetail1"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/light_rounded_button"
+        android:drawableStart="@drawable/ic_baseline_person_add_24"
+        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+        android:padding="10dp"
+        android:text="Contact Name 1"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/viewEmergencyContactsUpdateDetails"
+        android:layout_width="356dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="472dp"
+        android:background="@drawable/rounded_button"
+        android:text="Update Details"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,11 +14,11 @@
         android:layout_height="148dp"
         android:layout_marginStart="126dp"
         android:layout_marginTop="116dp"
-        android:background="@drawable/img"
         android:contentDescription="ProfilePhoto"
         android:src="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/user_account" />
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/rectangular_edittext"
+                android:background="@drawable/rounded_edittext"
                 android:inputType="textPersonName"
                 android:hint="Username"
                 android:paddingLeft="8dp"/>
@@ -63,7 +63,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/rectangular_edittext"
+                android:background="@drawable/rounded_edittext"
                 android:inputType="textPersonName"
                 android:hint="Email"
                 android:paddingLeft="8dp"/>

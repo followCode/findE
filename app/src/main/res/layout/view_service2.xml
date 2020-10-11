@@ -8,21 +8,23 @@
     android:padding="10dp"
     tools:context=".ViewService2Activity">
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapViewService2"
+    <fragment
+        android:id="@+id/ambulanceMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="376dp"
-        android:layout_height="225dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="228dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listService2"
-        android:layout_width="376dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="364dp"
+        android:layout_width="383dp"
+        android:layout_height="344dp"
+        android:layout_marginTop="264dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

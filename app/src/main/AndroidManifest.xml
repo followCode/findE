@@ -19,7 +19,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DashboardActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/maps_api_key" />
+
+
+        <activity android:name=".SignOutActivity"></activity>
+        <activity android:name=".DashboardActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".IntroActivity"
             android:theme="@style/Theme.Intro" />
@@ -29,38 +42,32 @@
         <activity android:name=".GetStartedActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
-        <activity android:name=".ViewEmergencyContacts" />
-        <activity android:name=".MainActivity">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
-        <activity android:name=".AddEmergencyContactsActivity">
-
-        </activity>
-        <activity android:name=".CurrentLocationActivity">
-
-        </activity>
-        <activity android:name=".EnterNewPasswordActivity">
-
-        </activity>
-        <activity android:name=".ViewService1Activity">
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
-        <activity android:name=".ViewService2Activity"></activity>
-        <activity android:name=".ViewService3Activity"></activity>
+        <activity android:name=".ViewEmergencyContacts" />
+        <activity android:name=".MainActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".AddEmergencyContactsActivity"></activity>
+        <activity android:name=".EnterNewPasswordActivity"></activity>
+        <activity android:name=".ViewService1Activity"></activity>
+        <activity android:name=".ViewService2Activity" />
+        <activity android:name=".ViewService3Activity" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
