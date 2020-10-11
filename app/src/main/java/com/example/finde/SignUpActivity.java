@@ -145,7 +145,7 @@ public class SignUpActivity extends Activity {
 
 
                     Toast.makeText(SignUpActivity.this, "Matching Passwords!!", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(SignUpActivity.this, DashboardActivity.class);
+                    Intent i = new Intent(SignUpActivity.this, GetStartedActivity.class);
                     startActivity(i);
                     finish();
 
