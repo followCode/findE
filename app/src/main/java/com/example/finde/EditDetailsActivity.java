@@ -9,10 +9,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class EditDetailsActivity extends AppCompatActivity {
     private Button updateDetails;
+
+    EditText name, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +29,13 @@ public class EditDetailsActivity extends AppCompatActivity {
 
         // Setup buttons
         updateDetails = findViewById(R.id.UpdateDetails);
+        name = (EditText)findViewById(R.id.editDetailsName);
+        email = (EditText)findViewById(R.id.editDetailsEmail);
         updateDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Toast.makeText(EditDetailsActivity.this, "Updated details!", Toast.LENGTH_SHORT).show();
             }
         });

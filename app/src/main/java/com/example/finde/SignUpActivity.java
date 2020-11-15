@@ -1,18 +1,25 @@
 package com.example.finde;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,6 +30,7 @@ public class SignUpActivity extends Activity {
     private EditText passw;
     private EditText confirmPassw;
     private EditText signUpEmail;
+    private EditText userName;
 
     private String specialCharacters = ".*[!@#$%^&_-~].*";
 
@@ -127,6 +135,7 @@ public class SignUpActivity extends Activity {
         passw = findViewById(R.id.signUpPassword);
         confirmPassw = findViewById(R.id.signUpRePassword);
         signUpEmail = findViewById(R.id.signUpEmail);
+        userName = findViewById(R.id.signUpName);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,14 +150,48 @@ public class SignUpActivity extends Activity {
                 if( check1&&check2&&check3 ) {
                     // Create the user account on Firebase
 
-                    // TODO: Implement Firebase account creation
+                    //Implementation of Firebase account creation
 
+                    mAuth.createUserWithEmailAndPassword(signUpEmail.getText().toString(), passw.getText().toString())
+                            .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        //when sign Up is successful
+                                        Toast.makeText(SignUpActivity.this, "Signed Up Successfully!", Toast.LENGTH_SHORT).show();
 
-                    Toast.makeText(SignUpActivity.this, "Matching Passwords!!", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(SignUpActivity.this, GetStartedActivity.class);
-                    startActivity(i);
-                    finish();
+                                        // Get created user
+                                        FirebaseUser currentUser = mAuth.getCurrentUser();
 
+                                        // Update their display name
+                                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                                .setDisplayName(userName.getText().toString())
+                                                .build();
+
+                                        // Make update request
+                                        currentUser.updateProfile(profileUpdates)
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+                                                            Log.d("DEBUG", "User profile updated.");
+                                                        }
+                                                    }
+                                                });
+
+                                        Intent i = new Intent(SignUpActivity.this, GetStartedActivity.class);
+                                        startActivity(i);
+                                        finish();
+                                    } else {
+                                        // If sign Up fails, and user email is already registered.
+                                        if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                            Toast.makeText(SignUpActivity.this, "Provided Email Is Already Registered!", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(SignUpActivity.this, "Not able to register now, Please check your internet connection!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                }
+                            });
                 }
             }
         });

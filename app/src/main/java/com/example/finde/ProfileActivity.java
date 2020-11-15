@@ -9,16 +9,28 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileActivity extends AppCompatActivity {
     private Button emergencyContactButton;
     private Button changePasswordButton;
+    private Button editProfile;
+    private TextView profileUserName;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
+        String email =FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        profileUserName = findViewById(R.id.profileUserName);
+        profileUserName.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
 
+        TextView userEmail = findViewById(R.id.profileUserEmail);
+
+        userEmail.setText(email);
         // Set the action bar details
         getSupportActionBar().setTitle("Profile");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -27,6 +39,7 @@ public class ProfileActivity extends AppCompatActivity {
         // Initialize the buttons
         emergencyContactButton = findViewById(R.id.profileEmergencyContacts);
         changePasswordButton = findViewById(R.id.profileChangePassword);
+        editProfile = findViewById(R.id.profileEditProfile);
 
         /*
         *  Start of button events
@@ -44,6 +57,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(ProfileActivity.this, EnterOldPasswordActivity.class);
+                startActivity(i);
+            }
+        });
+
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ProfileActivity.this, EditDetailsActivity.class);
                 startActivity(i);
             }
         });
