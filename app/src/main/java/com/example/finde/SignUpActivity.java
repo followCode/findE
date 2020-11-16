@@ -180,6 +180,7 @@ public class SignUpActivity extends Activity {
                                                 });
 
                                         Intent i = new Intent(SignUpActivity.this, GetStartedActivity.class);
+                                        i.putExtra("username", userName.getText().toString());
                                         startActivity(i);
                                         finish();
                                     } else {

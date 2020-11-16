@@ -34,6 +34,7 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".EditDetailsActivity" />
         <activity android:name=".EnterOldPasswordActivity" />
+        <activity android:name=".EnterPasswordActivity" />
         <activity android:name=".GetStartedActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity">
@@ -49,14 +50,16 @@
         <activity android:name=".ViewEmergencyContacts" />
         <activity android:name=".MainActivity">
 
+
+
+        </activity>
+        <activity android:name=".AddEmergencyContactsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".AddEmergencyContactsActivity"></activity>
         <activity android:name=".EnterNewPasswordActivity"></activity>
         <activity android:name=".ViewService1Activity"></activity>
         <activity android:name=".ViewService2Activity" />

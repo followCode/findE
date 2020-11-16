@@ -7,11 +7,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,6 +25,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 
 import java.util.Map;
 
@@ -34,6 +39,7 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
     private Button ambulanceButton;
     private Button policeButton;
     private GoogleMap mMap;
+    private TextView username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,14 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
         hospitalButton = findViewById(R.id.buttonService1);
         ambulanceButton = findViewById(R.id.buttonService2);
         policeButton = findViewById(R.id.buttonService3);
+
+
+        View header = navigationView.getHeaderView(0);
+        username = header.findViewById(R.id.drawerUsername);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String displayName = user.getDisplayName();
+        username.setText(displayName);
+
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -71,9 +85,14 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
                         break;
                     case R.id.nav_item_three:
                         // Handle Sign Out
-                        Intent signOut = new Intent(DashboardActivity.this, SignOutActivity.class);
-                        startActivity(signOut);
-                        finish();
+                        //Intent signOut = new Intent(DashboardActivity.this, SignOutActivity.class);
+                        //startActivity(signOut);
+                        //finish();
+                        FirebaseAuth.getInstance().signOut();
+                        Toast.makeText(getApplicationContext(), "Signed Out successfully", Toast.LENGTH_SHORT).show();
+                        Intent signIn = new Intent(DashboardActivity.this, SignInActivity.class);
+                        signIn.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(signIn);
                         break;
                 }
 

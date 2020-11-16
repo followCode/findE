@@ -13,5 +13,6 @@ public class SignOutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_out);
         FirebaseAuth.getInstance().signOut();
+
     }
 }
