@@ -12,10 +12,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class AddEmergencyContactsActivity extends Activity {
     private Button nextButton;
     private Button emerContactButton1, emerContactButton2;
-    private String contact1, contact2;
+    private String contact1 ="", contact2 ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,11 +74,44 @@ public class AddEmergencyContactsActivity extends Activity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AddEmergencyContactsActivity.this, DashboardActivity.class);
-                startActivity(i);
-                finish();
+
+                if(!contact1.equals("")  &&  !contact2.equals("")) {
+                    saveContacts();
+                    Intent i = new Intent(AddEmergencyContactsActivity.this, DashboardActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+                else if(contact1.equals("")  &&  contact2.equals("")){
+                    Toast.makeText(getApplicationContext(), "Please select the contacts", Toast.LENGTH_SHORT).show();
+                }
+                else if(contact1.equals("")){
+                    Toast.makeText(getApplicationContext(), "Please select the contact 1", Toast.LENGTH_SHORT).show();
+                }
+                else if(contact2.equals("")){
+                    Toast.makeText(getApplicationContext(), "Please select the contact 2", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+    }
+
+    public void saveContacts(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String email = user.getEmail();
+
+        Map<String, Object> userContact = new HashMap<>();
+        userContact.put("contact1", contact1);
+        userContact.put("contact2", contact2);
+        userContact.put("email", email);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("userContacts")
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(getApplicationContext(), "Successfully added the contacts", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     @Override
@@ -78,19 +121,6 @@ public class AddEmergencyContactsActivity extends Activity {
             switch (requestCode){
                 case 222:
                     if (resultCode == Activity.RESULT_OK){
-                        /*Uri contactUri = data.getData();
-                        String[] projection = new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER};
-                        Cursor cursor = getApplicationContext().getContentResolver().query(contactUri, projection,
-                                null, null, null);
-
-                        if (cursor != null && cursor.moveToFirst()) {
-                            int numberIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-                            String number = cursor.getString(numberIndex);
-
-                            contact1 = number;
-                            Toast.makeText(getApplicationContext(), contact1, Toast.LENGTH_SHORT).show();
-                        }
-                        cursor.close();*/
 
                         Uri contactData = data.getData();
 
@@ -101,20 +131,13 @@ public class AddEmergencyContactsActivity extends Activity {
                                         null,
                                         null);
 
-                        String name = "", phoneNumber = "";
+                        String phoneNumber = "";
 
                         if( phones.moveToFirst() ) {
                             phoneNumber = phones.getString(phones.getColumnIndex(
                                     ContactsContract.CommonDataKinds.Phone.NUMBER));
                         }
 
-                        /*while (phones.moveToNext()) {
-                            name = phones.getString(phones.getColumnIndex(
-                                    ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-                            phoneNumber = phones.getString(phones.getColumnIndex(
-                                    ContactsContract.CommonDataKinds.Phone.NUMBER));
-
-                        }*/
                         contact1 = phoneNumber;
                         Toast.makeText(getApplicationContext(), "Contact: "+contact1, Toast.LENGTH_SHORT).show();
                         phones.close();
@@ -125,25 +148,26 @@ public class AddEmergencyContactsActivity extends Activity {
 
                 case 444:
                     if (resultCode == Activity.RESULT_OK){
-                        /*Uri contactUri = data.getData();
-                        String[] projection = new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER};
-                        Cursor cursor = getApplicationContext().getContentResolver().query(contactUri, projection,
-                                null, null, null);
 
-                        if (cursor != null && cursor.moveToFirst()) {
-                            int numberIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-                            String number = cursor.getString(numberIndex);
-
-                            contact2 = number;
-                            Toast.makeText(getApplicationContext(), contact2, Toast.LENGTH_SHORT).show();
-                        }
-                        cursor.close();*/
                         Uri contactData = data.getData();
-                        Cursor cursor = getContentResolver().query(contactData, null, null, null, null);
-                        cursor.moveToFirst();
-                        String number = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                        contact2 = number;
-                        cursor.close();
+
+                        Cursor phones = getContentResolver()
+                                .query(contactData,
+                                        null,
+                                        null,
+                                        null,
+                                        null);
+
+                        String phoneNumber = "";
+
+                        if( phones.moveToFirst() ) {
+                            phoneNumber = phones.getString(phones.getColumnIndex(
+                                    ContactsContract.CommonDataKinds.Phone.NUMBER));
+                        }
+
+                        contact2 = phoneNumber;
+                        Toast.makeText(getApplicationContext(), "Contact: "+contact2, Toast.LENGTH_SHORT).show();
+                        phones.close();
                     }else{
                         Toast.makeText(getApplicationContext(), "Contact2 not selected", Toast.LENGTH_SHORT).show();
                     }
