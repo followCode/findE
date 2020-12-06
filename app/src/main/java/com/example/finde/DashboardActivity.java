@@ -4,10 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -24,11 +32,14 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
 
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class DashboardActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -40,6 +51,11 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
     private Button policeButton;
     private GoogleMap mMap;
     private TextView username;
+    private TextView curLocationTextView;
+
+    /*Location implementation*/
+    private FusedLocationProviderClient fusedLocationProviderClient;
+    private Geocoder geocoder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +67,17 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        // Initialize
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        geocoder = new Geocoder(this, Locale.getDefault());
+
         drawerLayout = findViewById(R.id.dash_drawer);
         navigationView = findViewById(R.id.dash_nav);
         navigationView.setItemIconTintList(null);
         hospitalButton = findViewById(R.id.buttonService1);
         ambulanceButton = findViewById(R.id.buttonService2);
         policeButton = findViewById(R.id.buttonService3);
+        curLocationTextView = findViewById(R.id.CurrentLocation);
 
 
         View header = navigationView.getHeaderView(0);
@@ -147,12 +168,54 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(12.9716, 77.5946);
-        mMap.addMarker(new MarkerOptions()
-                .position(sydney)
-                .title("Marker in Sydney"));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom((sydney), 15));
+        // Get status of location permission
+        int res = getApplicationContext()
+                    .checkCallingOrSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
+
+        // Check if permission for location is granted
+        if( res== PackageManager.PERMISSION_GRANTED ) {
+            // Get the last recorded location of the user
+            fusedLocationProviderClient.getLastLocation()
+                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            if( location!=null ) {
+                                // Create a market with the location
+                                LatLng curLocation = new LatLng(location.getLatitude(), location.getLongitude());
+                                mMap.addMarker(new MarkerOptions()
+                                        .position(curLocation)
+                                        .title("Your location"));
+                                // Animate to zoom to the marker
+                                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom((curLocation), 15));
+
+                                try {
+                                    // Get the addresses available for given location
+                                    List<Address> addresses = geocoder.getFromLocation(location.getLatitude(),
+                                                            location.getLongitude(), 1);
+                                    // Get the first address line
+                                    String address = addresses.get(0).getAddressLine(0);
+                                    // Update current location text view with the address line
+                                    curLocationTextView.setText(address);
+
+                                } catch(Exception e) {
+                                    // In the case we weren't able to get address
+                                    Toast.makeText(getApplicationContext(), "Error: Unable to get address",
+                                            Toast.LENGTH_SHORT).show();
+                                    Log.e("Dash:Location:", e.getMessage());
+                                }
+                            } else {
+                                // If location wasn't available
+                                Toast.makeText(getApplicationContext(), "Error: Unable to get user current location",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        } else {
+            // If the permission wasn't granted
+            Toast.makeText(getApplicationContext(), "Error: Permission not given",
+                                Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 }
