@@ -1,5 +1,6 @@
 package com.example.finde;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -8,12 +9,16 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -26,6 +31,7 @@ public class AddEmergencyContactsActivity extends Activity {
     private Button nextButton;
     private Button emerContactButton1, emerContactButton2;
     private String contact1 ="", contact2 ="";
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,7 @@ public class AddEmergencyContactsActivity extends Activity {
         emerContactButton1 = findViewById(R.id.addEmergencyContact1);
         emerContactButton2 =  findViewById(R.id.addEmergencyContact2);
         nextButton = findViewById(R.id.addEmergencyNextButton);
+        progressBar = findViewById(R.id.progressBar);
 
         emerContactButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,9 +66,12 @@ public class AddEmergencyContactsActivity extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent myActivity = new Intent( Intent.ACTION_PICK,
-                            android.provider.ContactsContract.Contacts.CONTENT_URI);
-                    startActivityForResult(myActivity, 444);
+                    //Intent myActivity = new Intent( Intent.ACTION_PICK,
+                    //        android.provider.ContactsContract.Contacts.CONTENT_URI);
+                    Intent intent = new Intent(Intent.ACTION_PICK,
+                            ContactsContract.Contacts.CONTENT_URI);
+                    intent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
+                    startActivityForResult(intent, 444);
                 } catch (Exception e) {
                     Toast.makeText( getBaseContext(), e.getMessage(),
                             Toast.LENGTH_LONG).show();
@@ -77,9 +87,6 @@ public class AddEmergencyContactsActivity extends Activity {
 
                 if(!contact1.equals("")  &&  !contact2.equals("")) {
                     saveContacts();
-                    Intent i = new Intent(AddEmergencyContactsActivity.this, DashboardActivity.class);
-                    startActivity(i);
-                    finish();
                 }
                 else if(contact1.equals("")  &&  contact2.equals("")){
                     Toast.makeText(getApplicationContext(), "Please select the contacts", Toast.LENGTH_SHORT).show();
@@ -95,6 +102,7 @@ public class AddEmergencyContactsActivity extends Activity {
     }
 
     public void saveContacts(){
+        progressBar.setVisibility(View.VISIBLE);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String email = user.getEmail();
 
@@ -105,11 +113,23 @@ public class AddEmergencyContactsActivity extends Activity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("userContacts")
-                .add(user)
+                .add(userContact)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Toast.makeText(getApplicationContext(), "Successfully added the contacts", Toast.LENGTH_SHORT).show();
+
+                        // Move to next activity
+                        Intent i = new Intent(AddEmergencyContactsActivity.this, DashboardActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        progressBar.setVisibility(View.GONE);
+                        Log.e("UPDATE:", e.getMessage());
                     }
                 });
     }

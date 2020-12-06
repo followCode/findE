@@ -49,16 +49,18 @@
         </activity>
         <activity android:name=".ViewEmergencyContacts" />
         <activity android:name=".MainActivity">
-
-
-
-        </activity>
-        <activity android:name=".AddEmergencyContactsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".AddEmergencyContactsActivity">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
         </activity>
         <activity android:name=".EnterNewPasswordActivity"></activity>
         <activity android:name=".ViewService1Activity"></activity>
