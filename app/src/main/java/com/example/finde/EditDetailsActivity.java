@@ -21,7 +21,14 @@ import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.SetOptions;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -77,6 +84,8 @@ public class EditDetailsActivity extends AppCompatActivity {
         name.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
         email.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
 
+        final String origEmail = email.getText().toString();
+
         password = getIntent().getStringExtra("password");
         updateDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +106,21 @@ public class EditDetailsActivity extends AppCompatActivity {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if (task.isSuccessful()) {
+                                                    FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
+                                                    final CollectionReference complaintsRef = rootRef.collection("userContacts");
+                                                    complaintsRef.whereEqualTo("email",origEmail).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                            if (task.isSuccessful()) {
+                                                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                                                    Map<Object, String> map = new HashMap<>();
+                                                                    map.put("email", email.getText().toString());
+                                                                    complaintsRef.document(document.getId()).set(map, SetOptions.merge());
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+
                                                     Toast.makeText(getApplicationContext(), "Updated details!", Toast.LENGTH_SHORT).show();
                                                 }
                                                 else{
@@ -104,6 +128,7 @@ public class EditDetailsActivity extends AppCompatActivity {
                                                 }
                                             }
                                         });
+
                             } else {
                                 Toast.makeText(getApplicationContext(), "Error: Please try again later!", Toast.LENGTH_SHORT).show();
                             }

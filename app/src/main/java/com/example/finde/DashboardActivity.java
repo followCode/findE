@@ -1,10 +1,12 @@
 package com.example.finde;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -84,15 +86,27 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
                         startActivity(passw);
                         break;
                     case R.id.nav_item_three:
-                        // Handle Sign Out
-                        //Intent signOut = new Intent(DashboardActivity.this, SignOutActivity.class);
-                        //startActivity(signOut);
-                        //finish();
-                        FirebaseAuth.getInstance().signOut();
-                        Toast.makeText(getApplicationContext(), "Signed Out successfully", Toast.LENGTH_SHORT).show();
-                        Intent signIn = new Intent(DashboardActivity.this, SignInActivity.class);
-                        signIn.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(signIn);
+                        AlertDialog.Builder dialog = new AlertDialog.Builder(DashboardActivity.this);
+                        dialog.setTitle("SIGN OUT")
+                                .setCancelable(false)
+                                .setMessage("Do you really want to Sign Out?")
+                                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        FirebaseAuth.getInstance().signOut();
+                                        Toast.makeText(getApplicationContext(), "Signed Out successfully", Toast.LENGTH_SHORT).show();
+                                        Intent signIn = new Intent(DashboardActivity.this, SignInActivity.class);
+                                        signIn.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(signIn);
+                                    }
+                                })
+                                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                    }
+                                });
+
+                        dialog.create().show();
                         break;
                 }
 
