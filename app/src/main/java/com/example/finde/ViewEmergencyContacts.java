@@ -94,6 +94,7 @@ public class ViewEmergencyContacts extends AppCompatActivity {
         updateContacts.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                progressBar.setVisibility(View.VISIBLE);
                 if(!contact1.equals("") || !contact2.equals("")){
                     String email = FirebaseAuth.getInstance().getCurrentUser().getEmail().toString();
                     FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
@@ -101,6 +102,7 @@ public class ViewEmergencyContacts extends AppCompatActivity {
                     complaintsRef.whereEqualTo("email",email).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            progressBar.setVisibility(View.GONE);
                             if (task.isSuccessful()) {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Map<Object, String> map = new HashMap<>();
@@ -202,12 +204,14 @@ public class ViewEmergencyContacts extends AppCompatActivity {
     }
 
     private void updateButtonsText(){
+        progressBar.setVisibility(View.VISIBLE);
         String email = FirebaseAuth.getInstance().getCurrentUser().getEmail().toString();
         FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
         final CollectionReference complaintsRef = rootRef.collection("userContacts");
         complaintsRef.whereEqualTo("email",email).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         contactButton1.setText(document.get("contact1").toString());
