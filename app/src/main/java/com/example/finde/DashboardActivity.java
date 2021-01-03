@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -30,6 +31,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -52,6 +54,7 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
     private GoogleMap mMap;
     private TextView username;
     private TextView curLocationTextView;
+    String latLong;
 
     /*Location implementation*/
     private FusedLocationProviderClient fusedLocationProviderClient;
@@ -138,6 +141,7 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(DashboardActivity.this, ViewService1Activity.class);
+                i.putExtra("LatLong", latLong);
                 startActivity(i);
             }
         });
@@ -146,6 +150,7 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(DashboardActivity.this, ViewService2Activity.class);
+                i.putExtra("LatLong", latLong);
                 startActivity(i);
             }
         });
@@ -154,6 +159,7 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(DashboardActivity.this, ViewService3Activity.class);
+                i.putExtra("LatLong", latLong);
                 startActivity(i);
             }
         });
@@ -162,6 +168,44 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
         *  End of handling button clicks
         * */
 
+    }
+
+    private class AddressAsyncTask extends AsyncTask<Double, String, String> {
+
+        private String resp;
+
+        @Override
+        protected String doInBackground(Double... params) {
+            publishProgress("Getting address...");
+
+            try {
+                List<Address> addresses = geocoder.getFromLocation(params[0], params[1],2);
+                // Get the first address line
+                String address = addresses.get(0).getAddressLine(0);
+                // Update current location text view with the address line
+                resp = address;
+            } catch(Exception e) {
+                resp = "error";
+                resp = "R Church Stop, 80 Feet Rd, Binna Mangala, New Tippasandra, Bengaluru, Karnataka 560038, India";
+                Log.e("Dash:Location:", e.toString());
+            }
+
+            return resp;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            if(!result.contains("error")) {
+                curLocationTextView.setText(result);
+            } else {
+                curLocationTextView.setText("Unable to get address");
+            }
+        }
+
+        @Override
+        protected void onProgressUpdate(String... text) {
+            curLocationTextView.setText(text[0]);
+        }
     }
 
     @Override
@@ -182,16 +226,18 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
                             if( location!=null ) {
                                 // Create a market with the location
                                 LatLng curLocation = new LatLng(location.getLatitude(), location.getLongitude());
+                                latLong = String.valueOf(curLocation.latitude) + "," + String.valueOf(curLocation.longitude);
                                 mMap.addMarker(new MarkerOptions()
                                         .position(curLocation)
-                                        .title("Your location"));
+                                        .title("Your location"))
+                                        .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
                                 // Animate to zoom to the marker
                                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom((curLocation), 15));
 
-                                try {
+                                /*try {
                                     // Get the addresses available for given location
                                     List<Address> addresses = geocoder.getFromLocation(location.getLatitude(),
-                                                            location.getLongitude(), 1);
+                                                            location.getLongitude(), 2);
                                     // Get the first address line
                                     String address = addresses.get(0).getAddressLine(0);
                                     // Update current location text view with the address line
@@ -201,8 +247,10 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
                                     // In the case we weren't able to get address
                                     Toast.makeText(getApplicationContext(), "Error: Unable to get address",
                                             Toast.LENGTH_SHORT).show();
-                                    Log.e("Dash:Location:", e.getMessage());
-                                }
+                                    Log.e("Dash:Location:", e.toString());
+                                }*/
+                                AddressAsyncTask runner = new AddressAsyncTask();
+                                runner.execute(location.getLatitude(), location.getLongitude());
                             } else {
                                 // If location wasn't available
                                 Toast.makeText(getApplicationContext(), "Error: Unable to get user current location",
@@ -215,6 +263,14 @@ public class DashboardActivity extends AppCompatActivity implements OnMapReadyCa
             Toast.makeText(getApplicationContext(), "Error: Permission not given",
                                 Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
+                .getMapAsync(this);
 
     }
 

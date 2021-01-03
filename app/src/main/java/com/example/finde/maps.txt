@@ -1,0 +1,804 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "ATtYBwLmvXoQ1nKC1Xaei2TaWdn6lXQ_5dLnjRAUWkqNSWgxYNhCxYrWN68gP8fbnf2KHfZD-Lcl7G2DUfcH3OzAfqsz37VZ3waE8EvxUUiF-B6X2KZfHsDyxB-BSuHeFY_QC4jansIGAAve5I7guzo6Cy7phlxmb1N6Z6pTNFzTG-CvAncshaGEtS6tbEEl_qK7rA-HAhzm3SPfffJnvWRyf2ddwKn09no9we9m1kEY-LGAkqvYA39vOHoJmS-_dmZP79MTrm41IoYl5Sm7lFcjXcyIrCleUIN-SReQ4-6ZqXl7L4Pj9-5p2wdl4p4wQpikxCGYPriThA2J5iccelURaNaFKFuAdQj6vQf1ICbGH1ppDuU32onFkzLVSy-n0VyrVGyAuyOjTma2ARXm9cHPLqWFKwRXmCJxnc2ZXeCGbj2omXkNXqvDAS9myw",
+   "results" : [
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0110954,
+               "lng" : 77.6973553
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0123860302915,
+                  "lng" : 77.69868553029151
+               },
+               "southwest" : {
+                  "lat" : 13.0096880697085,
+                  "lng" : 77.69598756970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Sri Lakshmi Super Speciality Hospital",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1920,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106576591657381858097\"\u003eJoseph Jose\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwLgehxHeKCgvQDC8WzPrVvjS3-of16N5wFmPb5hsuRgViPrmV7VIfbBuxSD2Av9Hh7jnfS0psiSYUM9QjkJa_jxU2BqpxPkOOrzkhbYCsFEtGExicoKr9GrBtbp-7rstlnJhDEocBJ3WgFh9j9a7IuFVt2SU0Q_myrEkf8SYSk9uVnX",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJBXg3MAcRrjsRoF_JBrVqs-8",
+         "plus_code" : {
+            "compound_code" : "2M6W+CW Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2M6W+CW"
+         },
+         "rating" : 3,
+         "reference" : "ChIJBXg3MAcRrjsRoF_JBrVqs-8",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 108,
+         "vicinity" : "near Indane Gas, No. 301, 3rd Main Road, Old Extension, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0033249,
+               "lng" : 77.7124415
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0046672802915,
+                  "lng" : 77.71389363029151
+               },
+               "southwest" : {
+                  "lat" : 13.0019693197085,
+                  "lng" : 77.7111956697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Unique Smile Dental Care Center",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 420,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116625206014386959552\"\u003eUnique Smile Dental Care Center\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwL9Tk5NPO4jSxpppg8Bv8HlpGILDTlHbtNn0A7GqIEzSv53kEz2tNh0sctFL8TUR5lli-1L4d8o2C2X5N8d2KVgBNRCP2apg9RIYnlAUIOIkpPgeiS2ZRWldj9OTUVb_BSg_n8FfwZmjHXb6tpSza85sHV48u65yBYcURmp8gSTnaV6",
+               "width" : 940
+            }
+         ],
+         "place_id" : "ChIJl1iLF7sRrjsRhzAmJTsGS_4",
+         "plus_code" : {
+            "compound_code" : "2P36+8X Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P36+8X"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJl1iLF7sRrjsRhzAmJTsGS_4",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "dentist", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 55,
+         "vicinity" : "#34, Hoodi Main Road, 3rd Block, Ayyappa Nagar, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0163706,
+               "lng" : 77.716942
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0176820302915,
+                  "lng" : 77.71829243029153
+               },
+               "southwest" : {
+                  "lat" : 13.0149840697085,
+                  "lng" : 77.71559446970851
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Seegehalli Government Hospital",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2448,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111825367494995399870\"\u003eMeka Satyanarayana\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwIv7A0Snjal8SdgrqD011kYGMirfKZFli6f3vsSrBoWUlgUmgCPV5Mpv3pNt4yFuoVCG3MexmDCZCo-KREjSecTshFJmBnsHSIo9ho8YAsc_EtpTR5c3k6_dKW3v1sPYtRMCY3mFgLnDIy9muskxrzX-vvWi3cOYYkXx6IM9pONdMMC",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJXSsamrQRrjsRCaxlwvqqQ_I",
+         "plus_code" : {
+            "compound_code" : "2P88+GQ Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P88+GQ"
+         },
+         "rating" : 3.2,
+         "reference" : "ChIJXSsamrQRrjsRCaxlwvqqQ_I",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 24,
+         "vicinity" : "Seegehalli Main Road, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0083757,
+               "lng" : 77.6921794
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0096261302915,
+                  "lng" : 77.6935553302915
+               },
+               "southwest" : {
+                  "lat" : 13.0069281697085,
+                  "lng" : 77.6908573697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "ESIC",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3264,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103462673385365477293\"\u003eCrazy Dog\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwInudAmmGND0JIWfgExPKYxqykvelgA3Hk7iA5l2w0xgF3lhQXUgY08OqymDohV3ATxMXjxhQ6CDqRBOQHjbJB1_VM9MBBWYxSwM7M-Z1Jm7WFXKzKMN29zNVt73xruaWTxa-OZZPW0tdhbsSdCChSZeBiipOkWtuTw2pz31j-IqE2n",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJ11GRxwURrjsRt9Vf4jJ9UzU",
+         "plus_code" : {
+            "compound_code" : "2M5R+9V Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2M5R+9V"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJ11GRxwURrjsRt9Vf4jJ9UzU",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 17,
+         "vicinity" : "Hale Devasandra, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0094939,
+               "lng" : 77.6958147
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0108392802915,
+                  "lng" : 77.6971750802915
+               },
+               "southwest" : {
+                  "lat" : 13.0081413197085,
+                  "lng" : 77.69447711970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Patil Hospital",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1920,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113290982061775136105\"\u003eRajesh Maddy\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwLedt_kEii0Y2T3-H7Q8xcz4JeTzqfxwNfyUiqIoIfOJYTh4i01ck5gFdm7dUXwHwnXOmAjiqGs30jAQYRflBcVO1_7WQctKkGvuycFoP_HG07c51g_CZy8vWDetMqFuhKSO1mApkG0asdbcjgQkSx_GR41VFkBJLar2vdLtaYZa7XE",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJZXvcAAcRrjsRoL3qk8C0TZk",
+         "plus_code" : {
+            "compound_code" : "2M5W+Q8 Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2M5W+Q8"
+         },
+         "rating" : 3,
+         "reference" : "ChIJZXvcAAcRrjsRoL3qk8C0TZk",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 37,
+         "vicinity" : "42-b, Thimappa Complex, Old Madras Road, Near-Syndicate Bank, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "CLOSED_TEMPORARILY",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0103849,
+               "lng" : 77.7034101
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0117352302915,
+                  "lng" : 77.7047572802915
+               },
+               "southwest" : {
+                  "lat" : 13.0090372697085,
+                  "lng" : 77.7020593197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "name" : "S L V Fashion World",
+         "permanently_closed" : true,
+         "photos" : [
+            {
+               "height" : 480,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105029496557900676013\"\u003eS L V Fashion World\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwKOPzdStxEf-1mvdPZVMGPtrb7dRdhmFcrruQNfuStKRtheUflmoaipz8wdFouOHhOH6tXS8ppQvDz4XQCeqeqj9ndkRDTy6AOapCTovAatBWkK-bJlAFQpKs2qOEqM7Qu36qRekVoelr9XlDE5VWYv_vtYC45pFxqpW9xwmWZbn0VP",
+               "width" : 854
+            }
+         ],
+         "place_id" : "ChIJCxdlFKkRrjsR8aBw2IeaaPE",
+         "plus_code" : {
+            "compound_code" : "2P63+59 Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P63+59"
+         },
+         "reference" : "ChIJCxdlFKkRrjsR8aBw2IeaaPE",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "vicinity" : "59, Basavanapura Main Road, Manjunatha Layout, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0096748,
+               "lng" : 77.70733349999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0110776802915,
+                  "lng" : 77.7086902302915
+               },
+               "southwest" : {
+                  "lat" : 13.0083797197085,
+                  "lng" : 77.70599226970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Ujjwal Dental Clinic",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4096,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104855853607235875926\"\u003eNaveen S Chary\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwLyYwNJiEzdsJw7w1oj_GAojPjmMeQefEheECgkfv1n6ouXYd1rTCXaJ9WYmEl0cgPU9Vyp5VXAWfjXd4NxNXZy3chSJ181FrV05W6eJ-3fMlmmOkpcDRlIe9ttHDIn7LMRvbmnx_6h6mEzv6cHZbH-rRF77zi0jS8Hovf6BlYqiB5t",
+               "width" : 2304
+            }
+         ],
+         "place_id" : "ChIJC6Wo_K4RrjsRvwFUWzNKRFg",
+         "plus_code" : {
+            "compound_code" : "2P54+VW Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P54+VW"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJC6Wo_K4RrjsRvwFUWzNKRFg",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 4,
+         "vicinity" : "560036, Vijaya Bank Colony, Gokula Layout, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0087031,
+               "lng" : 77.70705989999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0100548802915,
+                  "lng" : 77.70837668029151
+               },
+               "southwest" : {
+                  "lat" : 13.0073569197085,
+                  "lng" : 77.70567871970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Shree physiotherapy and rehabilitation",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 3120,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116129466265351443002\"\u003eShree physiotherapy and rehabilitation\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwJ7hGbvkNdyPcjbhtvtxXKz-ZpAiSQ_VfhmOD5gzP-4Q65MK3YJrm-cyZ1DhdL5-hmYFP1fJZUqAiY1jnmn2jRL6fpKoABMm0y4P_ug3MCS651RSGcoqfgS2sQjPycS4RUUqb39G4I7HX2lGqRTSrMBvatOChpzLjn8T5GWx28UtJbP",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJp6SzY-ERrjsRTJihgfoXOd0",
+         "plus_code" : {
+            "compound_code" : "2P54+FR Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P54+FR"
+         },
+         "reference" : "ChIJp6SzY-ERrjsRTJihgfoXOd0",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "vicinity" : "Krishna Nagar Main Road, Gayathri Layout, Gokula Layout, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0102034,
+               "lng" : 77.7078164
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0115028802915,
+                  "lng" : 77.7091581302915
+               },
+               "southwest" : {
+                  "lat" : 13.0088049197085,
+                  "lng" : 77.70646016970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "name" : "Tirumala orthopaedic & surgical speciality center new born & kids care center",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 607,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112116062431901263407\"\u003eTirumala orthopaedic &amp; surgical speciality center new born &amp; kids care center\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwIGt1hptacNAiVLMObtI3N0NhThhzo5RPB53Lk21rJN9O7V4Ys8j4Ig4iYQvR_WfR86-LL1QT84MFVCFP6YT6URxMrsYsIvLRWQQNR0gusekcNYTMmEKup1WDD4VZtBRQ_P42xjEmmWpkQVbGZFZQG9NOozyrubPxiH2sq5wYZ4iF8h",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJM5vY1twRrjsRxtttrKZ2vbs",
+         "plus_code" : {
+            "compound_code" : "2P65+34 Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P65+34"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJM5vY1twRrjsRxtttrKZ2vbs",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "doctor", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 39,
+         "vicinity" : "#73,20th cross,2nd stage Gayathri layout, Basavanapura Main Road, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0101808,
+               "lng" : 77.70783879999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0114898302915,
+                  "lng" : 77.70918193029151
+               },
+               "southwest" : {
+                  "lat" : 13.0087918697085,
+                  "lng" : 77.70648396970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "name" : "Tirumala newborn & kids center",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 322,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117361580327135733930\"\u003eTirumala newborn &amp; kids center\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwKSE0dLHgZJmrFS_UM47k80cGG0f_ujqSUe265xbF42sUbey1-5_sNqlnHqXNsWmP2NjLDNxrBKsrQF6sUXFoeBdbmUHKZZjBKLC0M98XsdQNcSvyDeGFuM_-6udZwhQr1IJG5NauWFZ7z99Iy7kqEoSG_CxJ_UKCFKaGJqhxoUpi1M",
+               "width" : 574
+            }
+         ],
+         "place_id" : "ChIJN6v3ETERrjsRSqDbR21gKQw",
+         "plus_code" : {
+            "compound_code" : "2P65+34 Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P65+34"
+         },
+         "rating" : 5,
+         "reference" : "ChIJN6v3ETERrjsRSqDbR21gKQw",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "doctor", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 9,
+         "vicinity" : "#73,2nd stage,20th cross, Basavanapura Main Road, Gayathri Layout, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0105166,
+               "lng" : 77.7023308
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0118648302915,
+                  "lng" : 77.7036880802915
+               },
+               "southwest" : {
+                  "lat" : 13.0091668697085,
+                  "lng" : 77.70099011970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "SRI Venkateshwara medicals",
+         "place_id" : "ChIJKdx9KbARrjsRRDS2rGVeXv8",
+         "plus_code" : {
+            "compound_code" : "2P62+6W Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P62+6W"
+         },
+         "reference" : "ChIJKdx9KbARrjsRRDS2rGVeXv8",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "vicinity" : "Plot no-1, Basavanpura Main Road, 8th Cross Road, Nisarga Layout, SR Layout, Chikkabasavanapura, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0105705,
+               "lng" : 77.7022903
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0119204302915,
+                  "lng" : 77.70362838029152
+               },
+               "southwest" : {
+                  "lat" : 13.0092224697085,
+                  "lng" : 77.7009304197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "LNR Tower, Basavanapura",
+         "place_id" : "ChIJbdVjRuIRrjsRTTTYHEP3uu4",
+         "plus_code" : {
+            "compound_code" : "2P62+6W Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P62+6W"
+         },
+         "rating" : 5,
+         "reference" : "ChIJbdVjRuIRrjsRTTTYHEP3uu4",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 1,
+         "vicinity" : "Happy Feet School Road, Chikkabasavanapura, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0101069,
+               "lng" : 77.70045829999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0114795302915,
+                  "lng" : 77.70179668029151
+               },
+               "southwest" : {
+                  "lat" : 13.0087815697085,
+                  "lng" : 77.69909871970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Sri Ram Clinic",
+         "place_id" : "ChIJF1LbrsURrjsRJx-q8FM2WWA",
+         "plus_code" : {
+            "compound_code" : "2P62+25 Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P62+25"
+         },
+         "reference" : "ChIJF1LbrsURrjsRJx-q8FM2WWA",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "vicinity" : "280/A, Basavanapura Main Road, Devasandra Extension, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0101317,
+               "lng" : 77.700384
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0115121302915,
+                  "lng" : 77.70171893029151
+               },
+               "southwest" : {
+                  "lat" : 13.0088141697085,
+                  "lng" : 77.6990209697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Sri Guru Dental World",
+         "place_id" : "ChIJSVeTvj8RrjsRlR9OKOHjVBc",
+         "plus_code" : {
+            "compound_code" : "2P62+35 Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P62+35"
+         },
+         "rating" : 5,
+         "reference" : "ChIJSVeTvj8RrjsRlR9OKOHjVBc",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 2,
+         "vicinity" : "Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0134988,
+               "lng" : 77.70906330000001
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0148488802915,
+                  "lng" : 77.7104219802915
+               },
+               "southwest" : {
+                  "lat" : 13.0121509197085,
+                  "lng" : 77.70772401970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "INDIRA SAI DENTAL CARE",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "place_id" : "ChIJbbUrx60RrjsRpf2C8tJXy7M",
+         "plus_code" : {
+            "compound_code" : "2P75+9J Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P75+9J"
+         },
+         "reference" : "ChIJbbUrx60RrjsRpf2C8tJXy7M",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "vicinity" : "3rd Phase, 16th B, 10th Cross Road, Gayathri Layout, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.005303,
+               "lng" : 77.70287789999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0065880302915,
+                  "lng" : 77.7042229802915
+               },
+               "southwest" : {
+                  "lat" : 13.0038900697085,
+                  "lng" : 77.7015250197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "name" : "Pavithralaya Care 32 Dental Clinic",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 673,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112654367705658059222\"\u003ePavithralaya Care 32 Dental Clinic\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwJUXn_eu6TAH9G_V4f8eitJG71oCKMTzppw5-GVykirL_esOEM_cKeNGKFeC-WWK7g63TvRBbjyb7Kg3yDlJe1MDuCHM2xGZpPqeTCueinNPeRf75vfVNYU3khnMHAEi7_sQfoZI7X9hlhmlrdwKUBxWoBTzpsvxdBsOG4V7Kl4a5dv",
+               "width" : 1200
+            }
+         ],
+         "place_id" : "ChIJgdqCj20RrjsR9_QU5phqT4Q",
+         "plus_code" : {
+            "compound_code" : "2P43+45 Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P43+45"
+         },
+         "rating" : 5,
+         "reference" : "ChIJgdqCj20RrjsR9_QU5phqT4Q",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 6,
+         "vicinity" : "SHOP NO 21, Thippaiah Complex, near VENUGOPAL SWAMY TEMPLE, Devasandra Main Road, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0049017,
+               "lng" : 77.70399209999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0062205802915,
+                  "lng" : 77.70533148029151
+               },
+               "southwest" : {
+                  "lat" : 13.0035226197085,
+                  "lng" : 77.7026335197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Aksharas D.D.C Dental Clinic",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "place_id" : "ChIJHSORp5YRrjsR6b77RDC4pOA",
+         "plus_code" : {
+            "compound_code" : "2P33+XH Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P33+XH"
+         },
+         "reference" : "ChIJHSORp5YRrjsR6b77RDC4pOA",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "vicinity" : "Devasandra Main Road, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0052612,
+               "lng" : 77.7028224
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0065686802915,
+                  "lng" : 77.70416883029151
+               },
+               "southwest" : {
+                  "lat" : 13.0038707197085,
+                  "lng" : 77.70147086970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Mediplus",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3120,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114856590233070776435\"\u003eDan Jay\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwJ9xPXHC9dlJ0jkYOMBr706jQKB3IGDxidbOhtBxufSKJZbviK5AUplv1gpTOwh0l5WC_IDzlV6QrjIsKi7JkPg1nKzpOE4PH2hUNB1A7iCgcRhAahkufDdoSZJi14Dw5NEDNe-thk7hMHvNXPADLqQXJixkdDrfk3BG9Y2q9IJX6Jn",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJd-7VMKYRrjsR2VmrnMRcMuo",
+         "plus_code" : {
+            "compound_code" : "2P43+44 Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P43+44"
+         },
+         "reference" : "ChIJd-7VMKYRrjsR2VmrnMRcMuo",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "vicinity" : "266, Devasandra Main Rd, Vinayaka Nagar, Devasandra Main Road, Vinayaka Nagar, Krishnanagara, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0120967,
+               "lng" : 77.69984459999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0135256302915,
+                  "lng" : 77.7012307302915
+               },
+               "southwest" : {
+                  "lat" : 13.0108276697085,
+                  "lng" : 77.69853276970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Deepa Hospital",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1767,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104164356399472270698\"\u003eGopinath M B\u003c/a\u003e"
+               ],
+               "photo_reference" : "ATtYBwKYYt1i8LtvoYogEwdN-FLZB5Yol8MUesAlH_B0EkJ7qsO1vNaxzl3MBlIUwQuB6B-vA8TU-3-gfVL2B0bwlhrQIr-xa4z3I7QCb8GVVGxwkqIO-L-6vo17OBsQnvduZFrQatnAwgOEpIlMhrhLwrS3IBTGwMvcGKh8OraB-Tv_3-pI",
+               "width" : 3742
+            }
+         ],
+         "place_id" : "ChIJNzfgA6oRrjsRwGk42rB-X5Y",
+         "plus_code" : {
+            "compound_code" : "2M6X+RW Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2M6X+RW"
+         },
+         "rating" : 3.1,
+         "reference" : "ChIJNzfgA6oRrjsRwGk42rB-X5Y",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 161,
+         "vicinity" : "near Police Cottage, 27, Old Madras Road, Krishnarajapura, Bengaluru"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 13.0056472,
+               "lng" : 77.7019184
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 13.0069591302915,
+                  "lng" : 77.7032476302915
+               },
+               "southwest" : {
+                  "lat" : 13.0042611697085,
+                  "lng" : 77.70054966970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/hospital-71.png",
+         "name" : "Arathi Diagnostics",
+         "place_id" : "ChIJHWgzRzARrjsRc6lklSVqYhQ",
+         "plus_code" : {
+            "compound_code" : "2P42+7Q Bengaluru, Karnataka, India",
+            "global_code" : "7J5V2P42+7Q"
+         },
+         "reference" : "ChIJHWgzRzARrjsRc6lklSVqYhQ",
+         "scope" : "GOOGLE",
+         "types" : [ "hospital", "health", "point_of_interest", "establishment" ],
+         "vicinity" : "Manjunatha Layout, Krishnarajapura, Bengaluru"
+      }
+   ],
+   "status" : "OK"
+}
