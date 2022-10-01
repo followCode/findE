@@ -51,15 +51,15 @@ The user should be able to:
 
 ## User Onboarding Process
 
-![User Onboarding Process](output/img4.png)
+![User Onboarding Process](output/img4.jpg)
 
 ## Accessing Services
 
-![Accessing Services](output/img5.png)
+![Accessing Services](output/img5.jpg)
 
 ## Loading Services
 
-![Loading Services](output/img6.png)
+![Loading Services](output/img6.jpg)
 
 ## Database
 
