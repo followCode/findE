@@ -2,6 +2,7 @@
 
 findE is an Android emergency application that provides the means
 for locating the user's nearby emergency services. In addition to providing local hospitals, police stations, and emergency facilities, the app offers for storing emergency contacts. If the user chooses a service in case of any emergency, the app informs these emergency contacts via SMS. Furthermore, the app provides these sites' contact numbers and directions to the nearest emergency departments. 
+
 ## findE Working
 
 Dashboard to access the emergency services.
@@ -14,7 +15,6 @@ Calling emergency contacts and sending SMS.
 
 Adding emergency details and updating profile.
 ![Adding emergency contacts](output/img3.png)
-
 
 
 ## Functional Requirements
@@ -45,5 +45,14 @@ The user should be able to:
 - Security Requirements:
   - Users must be authenticated and validated using a valid email and password
   - The  application  must be accountable so that a member couldn’t see other members' accounts
+
+
+## Database
+
+In this project we use Firebase Cloud Firestore, it is
+a flexible, scalable NoSQL cloud database to store and sync data for client- and server-side
+development. It offers seamless integration with other Firebase and Google Cloud products, including
+Cloud Functions. Firestore stores simple data in documents which are very similar to JSON.
+
 
 
