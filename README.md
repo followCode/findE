@@ -49,6 +49,17 @@ The user should be able to:
   - Users must be authenticated and validated using a valid email and password
   - The  application  must be accountable so that a member couldn’t see other members' accounts
 
+## User Onboarding Process
+
+![User Onboarding Process](output/img4.png)
+
+## Accessing Services
+
+![Accessing Services](output/img5.png)
+
+## Loading Services
+
+![Loading Services](output/img6.png)
 
 ## Database
 
