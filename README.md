@@ -1,7 +1,7 @@
 # findE
 
-findE is an emergency app for locating nearby emergency services.
-
+findE is an Android emergency application that provides the means
+for locating the user's nearby emergency services. In addition to providing local hospitals, police stations, and emergency facilities, the app offers for storing emergency contacts. If the user chooses a service in case of any emergency, the app informs these emergency contacts via SMS. Furthermore, the app provides these sites' contact numbers and directions to the nearest emergency departments. 
 ## findE Working
 
 Dashboard to access the emergency services.
