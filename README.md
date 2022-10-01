@@ -6,14 +6,17 @@ for locating the user's nearby emergency services. In addition to providing loca
 ## findE Working
 
 Dashboard to access the emergency services.
+
 ![Dashboard](output/img1.png)
 
 
 Calling emergency contacts and sending SMS.
+
 ![Call emergency contacts and sending SMS](output/img2.png)
 
 
 Adding emergency details and updating profile.
+
 ![Adding emergency contacts](output/img3.png)
 
 
